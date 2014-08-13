@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Return True - jQuery Cycle Thing</title>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="http://return-true.com/examples/jquery.cycle.min.js"></script>
-<script src="http://return-true.com/examples/jquery.easing.1.3.js"></script>
-<script src="http://return-true.com/examples/jquery.easing.compatibility.js"></script>
-<script type="text/javascript">
-$(function() {
-			
-				$.fn.cycle.transitions.captionSlide = function($cont, $slides, opts) {
-					$cont.parent().css('overflow','hidden');
-					opts.fxFn = function(curr,next,opts,cb,fwd) {
-						$(next).css({ left: $cont.width() + 'px' });
-						$('#caption').animate({ left: '-' + ($('#caption').outerWidth(true) * 1.5 ) + 'px' }, 625, opts.easing, function() {
-							$('#caption').html($(next).find('.captionHidden').html());
-							$(curr).animate({ left: '-' + $cont.width() + 'px' }, 900, opts.easing, function() {
-								$(curr).css({ display: 'none' });
-							});
-							$(next).css({ display: 'block' }).animate({ left: '0px' }, 900, opts.easing, function() {
-								$('#caption').animate({ left: '35px' }, 625, opts.easing, function() {
-									if(cb) cb();
-								});
-							});
-						});
-					}
-				}
-				
-			
-			$('#slider').cycle({
-				fx: 'captionSlide', // choose your transition type, ex: fade, scrollUp, shuffle, etc..
+    <title>Return True - jQuery Cycle Thing</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://return-true.com/examples/jquery.cycle.min.js"></script>
+    <script src="http://return-true.com/examples/jquery.easing.1.3.js"></script>
+    <script src="http://return-true.com/examples/jquery.easing.compatibility.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $.fn.cycle.transitions.captionSlide = function ($cont, $slides, opts) {
+                $cont.parent().css('overflow', 'hidden');
+                opts.fxFn = function (curr, next, opts, cb, fwd) {
+                    $(next).css({ left: $cont.width() + 'px' });
+                    $('#caption').animate({ left: '-' + ($('#caption').outerWidth(true) * 1.5) + 'px' }, 625, opts.easing, function () {
+                        $('#caption').html($(next).find('.captionHidden').html());
+                        $(curr).animate({ left: '-' + $cont.width() + 'px' }, 900, opts.easing, function () {
+                            $(curr).css({ display: 'none' });
+                        });
+                        $(next).css({ display: 'block' }).animate({ left: '0px' }, 900, opts.easing, function () {
+                            $('#caption').animate({ left: '35px' }, 625, opts.easing, function () {
+                                if (cb) cb();
+                            });
+                        });
+                    });
+                }
+            }
+
+
+            $('#slider').cycle({
+                fx: 'captionSlide', // choose your transition type, ex: fade, scrollUp, shuffle, etc..
                 timeout: 4500,
-				easing: 'backout'
-			});
-		});
-</script>
-<style type="text/css">
+                easing: 'backout'
+            });
+        });
+    </script>
+    <style type="text/css">
 body {
 	background: #EFEFEF;
 	margin: 0;
@@ -105,52 +105,38 @@ span.slider-highlight {
 </style>
 </head>
 <body>
-<div id="container">
-<div class="span12" id="sliderCont">
-
-									<ul class="thumbnails" id="slider">
-
-															<li class="span12">
-
-									<a href="http://celeborama.net/tags/view/71">
-
-										<img src="http://return-true.com/examples/5x18_The_Werewolf_Transformation_01.jpg" width="940" />
-
-									</a>
-
-									<div class="captionHidden"><span class="item">Fancy pants</span><br /><span class="item second"><span class="slider-highlight">captions</span> on your slider</span></div>
-
-								</li>
-
-															<li class="span12">
-
-									<a href="http://celeborama.net/tags/view/70">
-
-										<img src="http://return-true.com/examples/5x18_The_Werewolf_Transformation_02.jpg" width="940" />
-
-									</a>
-
-									<div class="captionHidden"><span class="item">Your captions will <span class="slider-highlight">look</span> so awesome</span></div>
-
-								</li>
-
-															<li class="span12">
-
-									<a href="http://celeborama.net/tags/view/69">
-
-										<img src="http://return-true.com/examples/5x18_The_Werewolf_Transformation_04.jpg" width="940" />
-
-									</a>
-
-									<div class="captionHidden"><span class="item">See I told you</span><br /><span class="item second">they would look <span class="slider-highlight">awesome</span></span></div>
-
-								</li>
-
-														</ul>
-
-							<div class="caption" id="caption"><span class="item">Fancy pants</span><br /><span class="item second"><span class="slider-highlight">captions</span> on your slider</span></div>
-
-						</div>
-</div>
+    <div id="container">
+        <div class="span12" id="sliderCont">
+            <ul class="thumbnails" id="slider">
+                <li class="span12"><a href="http://celeborama.net/tags/view/71">
+                    <img src="http://return-true.com/examples/5x18_The_Werewolf_Transformation_01.jpg"
+                        width="940" />
+                </a>
+                    <div class="captionHidden">
+                        <span class="item">Fancy pants</span><br />
+                        <span class="item second"><span class="slider-highlight">captions</span> on your slider</span></div>
+                </li>
+                <li class="span12"><a href="http://celeborama.net/tags/view/70">
+                    <img src="http://return-true.com/examples/5x18_The_Werewolf_Transformation_02.jpg"
+                        width="940" />
+                </a>
+                    <div class="captionHidden">
+                        <span class="item">Your captions will <span class="slider-highlight">look</span> so
+                            awesome</span></div>
+                </li>
+                <li class="span12"><a href="http://celeborama.net/tags/view/69">
+                    <img src="http://return-true.com/examples/5x18_The_Werewolf_Transformation_04.jpg"
+                        width="940" />
+                </a>
+                    <div class="captionHidden">
+                        <span class="item">See I told you</span><br />
+                        <span class="item second">they would look <span class="slider-highlight">awesome</span></span></div>
+                </li>
+            </ul>
+            <div class="caption" id="caption">
+                <span class="item">Fancy pants</span><br />
+                <span class="item second"><span class="slider-highlight">captions</span> on your slider</span></div>
+        </div>
+    </div>
 </body>
 </html>
