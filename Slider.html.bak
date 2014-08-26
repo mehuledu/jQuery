@@ -32,7 +32,6 @@
                 timeout: 4500,
                 easing: 'backout'
             });
-
         });
     </script>
     <style type="text/css">
